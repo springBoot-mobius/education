@@ -18,7 +18,7 @@ public class TestController {
 
     @GetMapping("/ex02")
     public String ex02(){
-        return "/lectureDetail/lecture_board";
+        return "/join/teacherJoin";
     }
 
 }
