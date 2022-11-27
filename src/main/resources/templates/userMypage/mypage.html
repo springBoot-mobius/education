@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>마이페이지</title>
     <link rel="stylesheet" href="/css/userMypage/userMypage.css" />
-    <link rel="stylesheet" href="css/fixed/reset.css" />
+    <link rel="stylesheet" href="/css/fixed/reset.css" />
   </head>
   <body>
   <header th:replace="/fixed/header2.html" :: body></header>
@@ -70,7 +70,7 @@
                 <div class="text-one">
                   <div class="text-first">
                     <span class="">😀</span>
-                    <p class="bow-left">김정표님의 계정 정보</p>
+                    <p class="bow-left"><span id="userName" th:name="userName"></span> 계정 정보</p>
                   </div>
                   <div class="text-second">
                     <a href="">
