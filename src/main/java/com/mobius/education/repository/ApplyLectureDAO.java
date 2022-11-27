@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public class ApplyLectureDAO {
     private final ApplyLectureMapper applyLectureMapper;
 
+
+
 }
