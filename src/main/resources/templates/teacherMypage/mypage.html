@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Board</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/teacherMypage/mypage.css" />
+</head>
+<body>
+<div class="first_line"></div>
+<main class="mypage_main">
+    <!-- navi  -->
+    <div class="navi_wrapper">
+        <div class="navi_container">
+            <ul class="show_navi_detail">
+                <a href="#"><li class="section1">MY 홈</li></a>
+                <a href="#"><li class="section2">작성중인 지원서</li></a>
+                <a href="#"><li class="section3">나의 강의 현황</li></a>
+                <a href="#"><li class="section4">나의 후기</li></a>
+                <a href="#"><li class="section5">개인정보 설정</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <!-- mypage 보여질 내용 -->
+    <div class="mypage_detail">
+        <div class="detail_container">
+            <div class="mypage_title_container section_style">
+                <div class="mypage_title">MY 홈</div>
+            </div>
+
+            <!-- 0번째 section 주별 강의 시간표 -->
+            <div class="mypage_part0_container section_style">
+                <div class="mypage_part0_title_container">
+                    <div class="mypage_part0_title">나의 강의 시간표</div>
+                    <button class="show_detail_part0">전체보기 &gt;</button>
+                </div>
+                <div class="mypage_part0_detail_container">
+                    <div class="mypage_part0_detail">
+                        <div class="show_year_week">22년 11월 4주차</div>
+                        <div class="show_day_container">
+                            <div class="day monday">월</div>
+                            <div class="day tuesday">화</div>
+                            <div class="day wednesday">수</div>
+                            <div class="day thursday">목</div>
+                            <div class="day friday">금</div>
+                            <div class="day saturday">토</div>
+                            <div class="day sunday">일</div>
+                        </div>
+                        <div class="no_comment_mesage">현재 나의 예정 강의가 없어요</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 첫번째 section 강의 지원 -->
+            <div class="mypage_part1_container section_style">
+                <div class="mypage_part1_title_container">
+                    <div class="mypage_part1_title">작성중인 지원서</div>
+                    <button class="show_detail_part1">전체보기 &gt;</button>
+                </div>
+                <div class="mypage_part1_detail_container">
+                    <div class="mypage_part1_detail">
+                        <div class="no_apply_mesage">작성중인 지원서가 없어요</div>
+                        <div class="no_apply_mesage">관심있는 공고에 지원해 보세요.</div>
+                        <div class="go_to_apply">
+                            <button type="button">강의 등록하러 가기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 두번째 section 현재 강의 현황  -->
+            <div class="mypage_part2_container section_style">
+                <div class="mypage_part2_title_container">
+                    <div class="mypage_part2_title">현재 나의 강의 현황</div>
+                    <button class="show_detail_part2">전체보기 &gt;</button>
+                </div>
+                <div class="mypage_part2_detail_container">
+                    <div class="mypage_part2_detail">
+                        <div class="to_be_in_progress_class show_box">
+                            <div class="inside_title">진행예정 강좌</div>
+                            <div class="count_class">0</div>
+                        </div>
+                        <div class="ongoing_class show_box">
+                            <div class="inside_title">진행완료 강좌</div>
+                            <div class="count_class">0</div>
+                        </div>
+                        <div class="done_class show_box">
+                            <div class="inside_title">진행중인 강좌</div>
+                            <div class="count_class">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 세번째 section -->
+            <div class="mypage_part3_container section_style">
+                <div class="mypage_part3_title_container">
+                    <div class="mypage_part3_title">나의 후기</div>
+                    <button class="show_detail_part3">전체보기 &gt;</button>
+                </div>
+                <div class="mypage_part3_detail_container">
+                    <div class="mypage_part3_detail">
+                        <div class="no_comment_mesage">현재 나의 후기가 없어요</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
