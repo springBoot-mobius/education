@@ -4,20 +4,24 @@
     <title>Board</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/css/teacherMypage/expectedLecture.css" />
+    <link rel="stylesheet" href="/css/fixed/header2.css" />
+    <link rel="stylesheet" href="/css/fixed/footer.css" />
+    <link rel="stylesheet" href="/css/teacherMypage/ongoing.css" />
 </head>
 <body>
+<header th:replace="/fixed/header2.html :: body"></header>
+
 <div class="first_line"></div>
 <main class="mypage_main">
     <!-- navi  -->
     <div class="navi_wrapper">
         <div class="navi_container">
             <ul class="show_navi_detail">
-                <a href="#"><li class="section1">MY 홈</li></a>
-                <a href="#"><li class="section2">작성중인 지원서</li></a>
-                <a href="#"><li class="section3">나의 강의 현황</li></a>
-                <a href="#"><li class="section4">나의 후기</li></a>
-                <a href="#"><li class="section5">개인정보 설정</li></a>
+                <a th:href="@{/teacherMypage/mypage}"><li class="section1">MY 홈</li></a>
+                <a href="javascript:void(0);"><li class="section2">작성중인 지원서</li></a>
+                <a th:href="@{/teacherMypage/myLecture}"><li class="section3">나의 강의 현황</li></a>
+                <a th:href="@{/teacherMypage/myReview}"><li class="section4">나의 후기</li></a>
+                <a th:href="@{/teacherMypage/myInfo}"><li class="section5">개인정보 설정</li></a>
             </ul>
         </div>
     </div>
@@ -47,7 +51,7 @@
                 <a href="#"
                 ><div class="box expected-class">
                     <div class="box-title">진행 예정 강의</div>
-                    <div class="count">1</div>
+                    <div class="count">0</div>
                 </div>
                 </a>
                 <a href="#"
@@ -83,14 +87,14 @@
                     <div class="list-class-title list-content">타자 3000타 너두 할 수있어</div>
                     <div class="list-class-place list-content">서초구 방배동 남태령 마을회관</div>
                     <div class="list-class-time list-content">09:00 ~ 12:00</div>
-                    <div class="list-class-start-date list-content">2022/12/01</div>
+                    <div class="list-class-start-date list-content">2022/11/20</div>
                     <div class="list-class-end-date list-content">2022/12/07</div>
                     <div class="list-class-personnel list-content">12/30</div>
                 </div>
 
                 <!-- 아무것도 없을 때 예시 -->
                 <div class="no-data-show-container">
-                    <div class="big-title">진행 예정 강의가 없습니다.</div>
+                    <div class="big-title">진행 중인 강의가 없습니다.</div>
                     <div class="middle-title">다양한 강의를 제공해 주세요.</div>
                     <div class="button-container">
                         <button type="button" class="go-to-apply-class">강의 신청하러 가기</button>
@@ -100,5 +104,6 @@
         </div>
     </div>
 </main>
+<footer th:replace="/fixed/footer.html :: #footer"></footer>
 </body>
 </html>

@@ -6,4 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class LectureFileVO {
+    private Long lectureFileNumber;
+    private String lectureFileName;
+    private String lectureFileUploadPath;
+    private String lectureFileUuid;
+    private Long lectureNumber;
 }

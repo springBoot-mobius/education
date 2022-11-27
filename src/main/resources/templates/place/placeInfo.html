@@ -5,11 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link href="https://webfontworld.github.io/pretendard/Pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/fixed/header2.css" />
+    <link rel="stylesheet" href="/css/fixed/footer.css" />
     <link rel="stylesheet" href="/css/place/placeInformation.css" />
 </head>
 <body>
-<header th:replace="/fixed/header2.html" :: body></header>
-
+<header th:replace="/fixed/header2.html :: body"></header>
 <main class="main">
     <section class="classRoom">
         <div class="container">
@@ -128,6 +129,6 @@
         </div>
     </section>
 </main>
-<footer th:replace="/fixed/footer.html" :: body></footer>
+<footer th:replace="/fixed/footer.html :: #footer"></footer>
 </body>
 </html>

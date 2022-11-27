@@ -4,9 +4,13 @@
     <title>Board</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/fixed/header2.css" />
+    <link rel="stylesheet" href="/css/fixed/footer.css" />
     <link rel="stylesheet" href="/css/teacherMypage/applyLecture.css" />
 </head>
 <body>
+<header th:replace="/fixed/header2.html :: body"></header>
+
 <!-- ----------
         강의 등록 페이지
     -------------->
@@ -18,60 +22,7 @@
                 <div class="register-title">강의 등록</div>
             </div>
 
-            <!-- -----------
-              강의 등록 주 내용 시작
-              ---------------->
-            <!-- 원하는 항목으로 이동하는 tab menu -->
-            <div class="tab-menu-container">
-                <div class="tab-1 tabs">기본정보</div>
-                <div class="tab-2 tabs">강의정보</div>
-                <div class="tab-3 tabs">강의장소 선택</div>
-            </div>
-
-            <form action="#" class="lecture-input-form">
-                <!-- tab-1 내용 -->
-                <div class="tab-1-wrapper">
-                    <div class="tab-1-container">
-                        <div class="tab-title-container">
-                            <div class="first-title">저는 이런 사람 입니다</div>
-                            <div class="second-title">기본정보</div>
-                        </div>
-                        <!-- 유의사항 메세지 -->
-                        <div class="notice-message-container">
-                            <div class="notice-message">정확하게 입력해 주세요!</div>
-                        </div>
-
-                        <!-- 이름 & 핸드폰 번호 입력 -->
-                        <div class="name-phone-number-container">
-                            <div class="name-input-container">
-                                <div class="input-title">기관명(이름)</div>
-                                <input type="text" class="type1" placeholder="등록시 사용될 이름을 입력해 주세요" />
-                            </div>
-                            <div class="phone-number-input-container">
-                                <div class="input-title">휴대폰 번호</div>
-                                <input type="text" class="type1" placeholder="ex) 01012345678" />
-                            </div>
-                        </div>
-                        <!-- 이메일 입력 -->
-                        <div class="email-input-container">
-                            <div class="input-title">이메일</div>
-                            <input type="text" class="type2" placeholder="이메일" />
-                        </div>
-
-                        <!-- 강의 직군 -->
-                        <div class="lecture-category-input-container">
-                            <div class="input-title">강의직군</div>
-                            <select name="lecture-category">
-                                <option value="lang">언어</option>
-                                <option value="it">IT</option>
-                                <option value="pe">체육</option>
-                                <option value="math">수학</option>
-                                <option value="science">과학</option>
-                                <option value="else">기타</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+            <form method="post" th:action="@{/teacherMypage/apply}" id="applyForm" th:object="${apply}" enctype="multipart/form-data" class="lecture-input-form">
                 <!-- -----------
                     tab-2 시작
                   ------------->
@@ -91,13 +42,32 @@
                         <!-- 강의 제목 -->
                         <div class="lecture-title-input-container">
                             <div class="input-title">강의 제목</div>
-                            <input type="text" class="type2" placeholder="강의 제목" />
+                            <input th:field="*{lectureTitle}" type="text" class="type2" placeholder="강의 제목" />
+                        </div>
+
+                        <!-- 강의 카테고리 -->
+                        <div class="lecture-category-input-container">
+                            <div class="input-title">카테고리</div>
+                            <select th:field="*{lectureCategory}" name="lecture-category">
+                                <option value="언어">언어</option>
+                                <option value="IT">IT</option>
+                                <option value="체육">체육</option>
+                                <option value="수학">수학</option>
+                                <option value="과학">과학</option>
+                                <option value="기타">기타</option>
+                            </select>
+                        </div>
+
+                        <!-- 수강 인원 -->
+                        <div class="lecture-title-input-container">
+                            <div class="input-title">수강 인원</div>
+                            <input th:field="*{lectureMaximumNumber}" type="number" class="type2" placeholder="수강 인원 (숫자만 입력해주세요.)" />
                         </div>
 
                         <!-- 강의 상세 내용 -->
                         <div class="lecture-detail-input-container">
                             <div class="input-title">강의 상세 내용</div>
-                            <textarea name="" id="" cols="100" rows="10"> </textarea>
+                            <textarea th:field="*{lectureContent}" cols="100" rows="10"> </textarea>
                         </div>
 
                         <!-- 강의 상세 내용 img 파일 등록 -->
@@ -136,7 +106,7 @@
                         <!-- 강의 날짜 입력 -->
                         <div class="lecture-date-input-container">
                             <div class="input-title">강의 날짜</div>
-                            <input type="date" class="type2" />
+                            <input th:field="*{lectureDate}" type="date" class="type2" />
                         </div>
 
                         <!-- 강의 장소 선택 -->
@@ -155,10 +125,10 @@
                         <!-- 강의 시간 입력 -->
                         <div class="lecture-time-input-container">
                             <div class="input-title">강의 시간</div>
-                            <select name="lecture-time-list">
-                                <option value="time-a">Time A (09:00~12:00)</option>
-                                <option value="time-b">Time B (13:00~17:00)</option>
-                                <option value="time-c">Time c (19:00~22:00)</option>
+                            <select th:field="*{lectureTime}" name="lecture-time-list">
+                                <option value="Time A (09:00~12:00)">Time A (09:00~12:00)</option>
+                                <option value="Time B (13:00~17:00)">Time B (13:00~17:00)</option>
+                                <option value="Time c (19:00~22:00)">Time c (19:00~22:00)</option>
                             </select>
                         </div>
                     </div>
@@ -167,12 +137,16 @@
                 <div class="button-wrapper">
                     <div class="button-container">
                         <input type="button" class="temporary-storage-btn" value="임시저장" />
-                        <input type="button" class="submit-btn" value="제출하기" />
+                        <input type="submit" class="submit-btn" value="제출하기" />
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </main>
+<footer th:replace="/fixed/footer.html :: #footer"></footer>
 </body>
+<script>
+
+</script>
 </html>
