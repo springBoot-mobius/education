@@ -72,20 +72,22 @@
 
                         <!-- 강의 상세 내용 img 파일 등록 -->
                         <div class="lecture-detail-img-input-container">
-                            <div class="input-title">강의 상세 내용</div>
-                            <input type="file" id="detail-img-file" />
-                            <label for="detail-img-file">
-                                <div class="file-upload">파일 업로드 하기</div>
-                            </label>
+                            <div class="input-title">강의 썸네일</div>
+                            <input type="file" id="thumbnail-img-file" name="thumb" />
+<!--                            <input type="file" id="detail-img-file" />-->
+<!--                            <label for="detail-img-file">-->
+<!--                                <div class="file-upload">파일 업로드 하기</div>-->
+<!--                            </label>-->
                         </div>
 
                         <!-- 강의 썸네일 img 파일 등록 -->
                         <div class="lecture-thumbnail-img-input-container">
                             <div class="input-title">강의 상세 내용</div>
-                            <input type="file" id="thumbnail-img-file" />
-                            <label for="thumbnail-img-file">
-                                <div class="file-upload">파일 업로드 하기</div>
-                            </label>
+                            <input type="file" id="detail-img-file" name="upload" />
+<!--                            <input type="file" id="thumbnail-img-file" />-->
+<!--                            <label for="thumbnail-img-file">-->
+<!--                                <div class="file-upload">파일 업로드 하기</div>-->
+<!--                            </label>-->
                         </div>
                     </div>
                 </div>
@@ -146,7 +148,32 @@
 </main>
 <footer th:replace="/fixed/footer.html :: #footer"></footer>
 </body>
+<script src="/js/basic/jquery.min.js"></script>
+<script src="/js/basic/jquery.dropotron.min.js"></script>
+<script src="/js/basic/browser.min.js"></script>
+<script src="/js/basic/breakpoints.min.js"></script>
+<script src="/js/basic/util.js"></script>
+<script src="/js/basic/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
+    $("input[type='file']").on('change', function(){
+        let formData = new FormData();
+        let files = this.files;
 
+        $(files).each(function(i, file){
+           formData.append("upload", file);
+        });
+
+        $.ajax({
+            url: "/lectureFile/upload",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function () {
+                console.log("업로드 성공");
+            }
+        });
+    });
 </script>
 </html>

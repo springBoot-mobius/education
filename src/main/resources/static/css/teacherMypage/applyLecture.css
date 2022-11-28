@@ -255,13 +255,13 @@ textarea {
     padding-bottom: 20px;
 }
 
-/* 강의 상세 첨부파일  */
+/* 강의 썸네일  */
 .lecture-detail-img-input-container {
     padding-bottom: 20px;
 }
 #detail-img-file {
-    display: none;
 }
+
 .file-upload {
     border: 2px solid #dee2e6;
     width: 20%;
@@ -271,10 +271,10 @@ textarea {
     cursor: pointer;
 }
 
-/* 강의 썸네일 입력 */
+/* 강의 상세 정보 파일 입력 */
 #thumbnail-img-file {
-    display: none;
 }
+
 .lecture-thumbnail-img-input-container {
     padding-bottom: 20px;
 }
