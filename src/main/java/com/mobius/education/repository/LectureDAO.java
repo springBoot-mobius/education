@@ -1,5 +1,6 @@
 package com.mobius.education.repository;
 
+import com.mobius.education.domain.vo.LectureDTO;
 import com.mobius.education.domain.vo.LectureVO;
 import com.mobius.education.mapper.LectureMapper;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,22 @@ public class LectureDAO {
     }
 
     //강의 신청
-    public void save(LectureVO lectureVO){
-        lectureMapper.insert(lectureVO);
+    public void save(LectureDTO lectureDTO){
+        lectureMapper.insert(lectureDTO);
+    }
+
+    //강의 삭제
+    public void remove(Long lectureNumber) {
+        lectureMapper.delete(lectureNumber);
+    }
+
+    //강의 수정
+    public void modify(LectureDTO lectureDTO) {
+        lectureMapper.update(lectureDTO);
+    }
+
+    //강의 조회
+    public LectureVO findById(Long lectureNumber) {
+        return lectureMapper.select(lectureNumber);
     }
 }

@@ -6,6 +6,7 @@
         <typeAlias type="com.mobius.education.domain.vo.TeacherVO" alias="teacherVO"/>
         <typeAlias type="com.mobius.education.domain.vo.PlaceVO" alias="placeVO"/>
         <typeAlias type="com.mobius.education.domain.vo.LectureVO" alias="lectureVO"/>
+        <typeAlias type="com.mobius.education.domain.vo.LectureDTO" alias="lectureDTO"/>
         <typeAlias type="com.mobius.education.domain.vo.ReviewVO" alias="reviewVO"/>
         <typeAlias type="com.mobius.education.domain.vo.LectureFileVO" alias="lectureFileVO"/>
         <typeAlias type="com.mobius.education.domain.vo.RequestVO" alias="requestVO"/>

@@ -1,5 +1,6 @@
 package com.mobius.education.controller;
 
+import com.mobius.education.domain.vo.LectureDTO;
 import com.mobius.education.domain.vo.LectureVO;
 import com.mobius.education.service.LectureService;
 import lombok.RequiredArgsConstructor;
@@ -52,9 +53,9 @@ public class TeacherMypageController {
 
 
     @PostMapping("/apply")
-    public RedirectView applyLecture(LectureVO lectureVO, RedirectAttributes redirectAttributes){
-        lectureVO.setLectureStatus("진행예정");
-        lectureService.apply(lectureVO);
+    public RedirectView applyLecture(LectureDTO lectureDTO, RedirectAttributes redirectAttributes){
+        lectureDTO.setLectureStatus("진행예정");
+        lectureService.apply(lectureDTO);
         return new RedirectView("/teacherMypage/mypage");
     }
 

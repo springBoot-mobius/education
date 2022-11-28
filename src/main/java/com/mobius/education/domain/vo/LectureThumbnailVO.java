@@ -10,5 +10,13 @@ public class LectureThumbnailVO {
     private String lectureThumbnailName;
     private String lectureThumbnailUploadPath;
     private String lectureThumbnailUuid;
+    private Long lectureThumbnailSize;
     private Long lectureNumber;
+
+    public void create(String lectureThumbnailName, String lectureThumbnailUploadPath, String lectureThumbnailUuid, Long lectureNumber) {
+        this.lectureThumbnailName = lectureThumbnailName;
+        this.lectureThumbnailUploadPath = lectureThumbnailUploadPath;
+        this.lectureThumbnailUuid = lectureThumbnailUuid;
+        this.lectureNumber = lectureNumber;
+    }
 }
