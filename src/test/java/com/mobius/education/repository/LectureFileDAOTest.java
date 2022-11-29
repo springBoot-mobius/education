@@ -1,4 +1,4 @@
-package com.mobius.education.mapper;
+package com.mobius.education.repository;
 
 import com.mobius.education.domain.vo.LectureDTO;
 import com.mobius.education.domain.vo.LectureFileVO;
@@ -13,17 +13,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j
-class LectureFileMapperTest {
-
+class LectureFileDAOTest {
     @Autowired
-    private LectureFileMapper lectureFileMapper;
+    private LectureFileDAO lectureFileDAO;
 
     @Test
     public void insertTest() {
+        LectureDTO lectureDTO = new LectureDTO();
         LectureFileVO lectureFileVO = new LectureFileVO();
-        lectureFileVO.create("테스트3", "2022/11/28", UUID.randomUUID().toString(), 100L, 26L);
-        lectureFileMapper.insert(lectureFileVO);
+        lectureDTO.setLectureNumber(26L);
+        lectureFileVO.create("테스트dao3", "2022/11/28", UUID.randomUUID().toString(), 100L, lectureDTO.getLectureNumber());
+        lectureFileDAO.save(lectureFileVO);
         log.info("name: " + lectureFileVO.getLectureFileName());
     }
-
 }

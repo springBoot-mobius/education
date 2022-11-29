@@ -14,19 +14,4 @@ import java.util.List;
 public class LectureThumbnailDAO {
     private final LectureThumbnailMapper lectureThumbnailMapper;
 
-    //    파일 추가
-    public void save(LectureThumbnailVO lectureThumbnailVO){
-        lectureThumbnailMapper.insert(lectureThumbnailVO);
-    }
-
-    //    파일 삭제
-    public void remove(Long lectureNumber) {
-        lectureThumbnailMapper.delete(lectureNumber);
-    }
-
-    //    파일 조회
-    public LectureThumbnailVO find(Long lectureNumber) {
-        return lectureThumbnailMapper.select(lectureNumber);
-    }
-
 }

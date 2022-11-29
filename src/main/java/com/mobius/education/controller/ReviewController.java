@@ -7,13 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("place/*")
-public class PlaceController {
-
-//    강의장
-    @GetMapping("/placeInfo")
-    public void placeInformation() {
+@RequestMapping("review/*")
+public class ReviewController {
+    @GetMapping("/review")
+    public void review() {
 
     }
 
+    @GetMapping("/myReview")
+    public void myReview() {
+
+    }
+
+    @GetMapping("/classReview")
+    public void classReview() {
+
+    }
 }
