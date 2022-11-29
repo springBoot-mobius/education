@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PlaceController {
 
 //    강의장
-    @GetMapping("/placeInformation")
+    @GetMapping("/placeInfo")
     public void placeInformation() {
 
     }

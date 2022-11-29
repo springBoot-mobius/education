@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:li="http://www.thymeleaf.org">
 <head>
     <title>Board</title>
     <meta charset="utf-8" />
@@ -116,7 +116,7 @@
                                         <li class="sort_content">• 최신순</li>
                                         <li class="sort_content">• 좋아요순</li>
                                     </ul>
-                                    <button class="write_button">
+                                    <button class="write_button write">
                                         <span class="write_img"></span>
                                         <span>글쓰기</span>
                                     </button>
@@ -124,306 +124,36 @@
                                 <!-- 목록 -->
                                 <div class="list_area">
                                     <ul class="list_container">
-                                        <!-- 첫번쩨 -->
-                                        <li class="list_box">
+                                        <!-- requestList -->
+                                        <li:block class="list_box" th:each="request:${requests}">
                                             <a href="">
-                                                <div class="list_info">
+                                                <div class="list_info" th:object="${request}">
                                                     <div class="list_left_info">
                                                         <div class="list_title">
-                                                            <h3
-                                                                class="title_text"
-                                                            >
-                                                                웹 강의
-                                                                열어주세요!
-                                                            </h3>
+                                                            <h3 class="title_text requestTitle" th:text="*{requestTitle}"></h3>
                                                         </div>
-                                                        <p class="list_content">
-                                                            안녕하세요! 웹
-                                                            강의가 너무 듣고
-                                                            싶어요!!! 꼭
-                                                            열어주세요!!
-                                                            sjskdjlkjsdfjskdjfsdfsdfasdasdfasdfassdfsdfsdfsdfsdfsdfdsdfasdfasdfasdfsja;svusdvsjhjskdbfhskdhfblajshdhfjashd
-                                                        </p>
-                                                        <div
-                                                            class="list_info_footer"
-                                                        >
+                                                        <p class="list_content requestContent" th:text="*{requestContent}"></p>
+                                                        <div class="list_info_footer">
                                                             <span>myewon</span>
                                                             <span>·</span>
-                                                            <span
-                                                                >2022/11/18</span
-                                                            >
+                                                            <span class="requestRegisterDate" th:text="*{requestRegisterDate}"></span>
                                                             <span>·</span>
-                                                            <span
-                                                                >개발·프로그래밍</span
-                                                            >
+                                                            <span class="requestCategory" th:text="*{requestCategory}">개발·프로그래밍</span>
                                                         </div>
                                                     </div>
-                                                    <div
-                                                        class="list_right_info"
-                                                    >
+                                                    <div class="list_right_info">
                                                         <div class="reply_area">
-                                                            <span
-                                                                class="reply_count"
-                                                                >0</span
-                                                            >
-                                                            <span
-                                                                class="reply_text"
-                                                                >댓글</span
-                                                            >
+                                                            <span class="reply_count">0</span>
+                                                            <span class="reply_text">댓글</span>
                                                         </div>
                                                         <div class="like_area">
-                                                            <span
-                                                                class="like_img"
-                                                            ></span>
-                                                            <span
-                                                                class="like_count"
-                                                                >3</span
-                                                            >
+                                                            <span class="like_img"></span>
+                                                            <span class="like_count">3</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li>
-                                        <!-- 두번쩨 -->
-                                        <li class="list_box">
-                                            <a href="">
-                                                <div class="list_info">
-                                                    <div class="list_left_info">
-                                                        <div class="list_title">
-                                                            <h3
-                                                                class="title_text"
-                                                            >
-                                                                웹 강의
-                                                                열어주세요!
-                                                            </h3>
-                                                        </div>
-                                                        <p class="list_content">
-                                                            안녕하세요! 웹
-                                                            강의가 너무 듣고
-                                                            싶어요!!! 꼭
-                                                            열어주세요!!
-                                                            sjskdjlkjsdfjskdjfsdfsdfasdasdfasdfassdfsdfsdfsdfsdfsdfdsdfasdfasdfasdfsja;svusdvsjhjskdbfhskdhfblajshdhfjashd
-                                                        </p>
-                                                        <div
-                                                            class="list_info_footer"
-                                                        >
-                                                            <span>myewon</span>
-                                                            <span>·</span>
-                                                            <span
-                                                                >2022/11/18</span
-                                                            >
-                                                            <span>·</span>
-                                                            <span
-                                                                >개발·프로그래밍</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="list_right_info"
-                                                    >
-                                                        <div class="reply_area">
-                                                            <span
-                                                                class="reply_count"
-                                                                >0</span
-                                                            >
-                                                            <span
-                                                                class="reply_text"
-                                                                >댓글</span
-                                                            >
-                                                        </div>
-                                                        <div class="like_area">
-                                                            <span
-                                                                class="like_img"
-                                                            ></span>
-                                                            <span
-                                                                class="like_count"
-                                                                >3</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- 세번쩨 -->
-                                        <li class="list_box">
-                                            <a href="">
-                                                <div class="list_info">
-                                                    <div class="list_left_info">
-                                                        <div class="list_title">
-                                                            <h3
-                                                                class="title_text"
-                                                            >
-                                                                웹 강의
-                                                                열어주세요!
-                                                            </h3>
-                                                        </div>
-                                                        <p class="list_content">
-                                                            안녕하세요! 웹
-                                                            강의가 너무 듣고
-                                                            싶어요!!! 꼭
-                                                            열어주세요!!
-                                                            sjskdjlkjsdfjskdjfsdfsdfasdasdfasdfassdfsdfsdfsdfsdfsdfdsdfasdfasdfasdfsja;svusdvsjhjskdbfhskdhfblajshdhfjashd
-                                                        </p>
-                                                        <div
-                                                            class="list_info_footer"
-                                                        >
-                                                            <span>myewon</span>
-                                                            <span>·</span>
-                                                            <span
-                                                                >2022/11/18</span
-                                                            >
-                                                            <span>·</span>
-                                                            <span
-                                                                >개발·프로그래밍</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="list_right_info"
-                                                    >
-                                                        <div class="reply_area">
-                                                            <span
-                                                                class="reply_count"
-                                                                >0</span
-                                                            >
-                                                            <span
-                                                                class="reply_text"
-                                                                >댓글</span
-                                                            >
-                                                        </div>
-                                                        <div class="like_area">
-                                                            <span
-                                                                class="like_img"
-                                                            ></span>
-                                                            <span
-                                                                class="like_count"
-                                                                >3</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- 네번쩨 -->
-                                        <li class="list_box">
-                                            <a href="">
-                                                <div class="list_info">
-                                                    <div class="list_left_info">
-                                                        <div class="list_title">
-                                                            <h3
-                                                                class="title_text"
-                                                            >
-                                                                웹 강의
-                                                                열어주세요!
-                                                            </h3>
-                                                        </div>
-                                                        <p class="list_content">
-                                                            안녕하세요! 웹
-                                                            강의가 너무 듣고
-                                                            싶어요!!! 꼭
-                                                            열어주세요!!
-                                                            sjskdjlkjsdfjskdjfsdfsdfasdasdfasdfassdfsdfsdfsdfsdfsdfdsdfasdfasdfasdfsja;svusdvsjhjskdbfhskdhfblajshdhfjashd
-                                                        </p>
-                                                        <div
-                                                            class="list_info_footer"
-                                                        >
-                                                            <span>myewon</span>
-                                                            <span>·</span>
-                                                            <span
-                                                                >2022/11/18</span
-                                                            >
-                                                            <span>·</span>
-                                                            <span
-                                                                >개발·프로그래밍</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="list_right_info"
-                                                    >
-                                                        <div class="reply_area">
-                                                            <span
-                                                                class="reply_count"
-                                                                >0</span
-                                                            >
-                                                            <span
-                                                                class="reply_text"
-                                                                >댓글</span
-                                                            >
-                                                        </div>
-                                                        <div class="like_area">
-                                                            <span
-                                                                class="like_img"
-                                                            ></span>
-                                                            <span
-                                                                class="like_count"
-                                                                >3</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- 다섯번쩨 -->
-                                        <li class="list_box">
-                                            <a href="">
-                                                <div class="list_info">
-                                                    <div class="list_left_info">
-                                                        <div class="list_title">
-                                                            <h3
-                                                                class="title_text"
-                                                            >
-                                                                웹 강의
-                                                                열어주세요!
-                                                            </h3>
-                                                        </div>
-                                                        <p class="list_content">
-                                                            안녕하세요! 웹
-                                                            강의가 너무 듣고
-                                                            싶어요!!! 꼭
-                                                            열어주세요!!
-                                                            sjskdjlkjsdfjskdjfsdfsdfasdasdfasdfassdfsdfsdfsdfsdfsdfdsdfasdfasdfasdfsja;svusdvsjhjskdbfhskdhfblajshdhfjashd
-                                                        </p>
-                                                        <div
-                                                            class="list_info_footer"
-                                                        >
-                                                            <span>myewon</span>
-                                                            <span>·</span>
-                                                            <span
-                                                                >2022/11/18</span
-                                                            >
-                                                            <span>·</span>
-                                                            <span
-                                                                >개발·프로그래밍</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="list_right_info"
-                                                    >
-                                                        <div class="reply_area">
-                                                            <span
-                                                                class="reply_count"
-                                                                >0</span
-                                                            >
-                                                            <span
-                                                                class="reply_text"
-                                                                >댓글</span
-                                                            >
-                                                        </div>
-                                                        <div class="like_area">
-                                                            <span
-                                                                class="like_img"
-                                                            ></span>
-                                                            <span
-                                                                class="like_count"
-                                                                >3</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
+                                        </li:bl>
                                     </ul>
                                 </div>
                             </div>
@@ -492,4 +222,13 @@
         </main>
         <footer th:replace="/fixed/footer.html :: #footer"></footer>
     </body>
+<script src="/js/request/list.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:inline="javascript"></script>
+<script>
+    $("button.write").on("click", function (e) {
+        e.preventDefault();
+        location.href="/request/ask";
+    })
+</script>
 </html>

@@ -20,10 +20,8 @@ class LectureFileMapperTest {
 
     @Test
     public void insertTest() {
-        LectureDTO lectureDTO = new LectureDTO();
-        lectureDTO.setLectureNumber(Long.parseLong("23"));
         LectureFileVO lectureFileVO = new LectureFileVO();
-        lectureFileVO.create("테스트1", "2022/11/16", UUID.randomUUID().toString(), lectureDTO.getLectureNumber());
+        lectureFileVO.create("테스트3", "2022/11/28", UUID.randomUUID().toString(), 100L, 26L);
         lectureFileMapper.insert(lectureFileVO);
         log.info("name: " + lectureFileVO.getLectureFileName());
     }

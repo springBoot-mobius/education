@@ -10,7 +10,7 @@ public class Criteria {
     private int page;
     private int amount;
 
-    public com.mobius.education.domain.criteria.Criteria create(int page, int amount) {
+    public Criteria create(int page, int amount) {
         this.page = page;
         this.amount = amount;
         return this;
