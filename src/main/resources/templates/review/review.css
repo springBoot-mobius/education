@@ -213,35 +213,6 @@ button.modify_btn {
     height: 40px;
     width: 50px;
 }
-table {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    margin-bottom: 50px;
-    margin-left: 30px;
-}
-tr.tHead {
-    height: 40px;
-}
-th {
-    border-bottom: 1px solid #ccc;
-}
-td {
-    height: 35px;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    padding: 15px;
-}
-.reivewRegisterDate, .reivewUpdateDate {
-    width: 90px;
-}
-.reviewWriter {
-    width: 50px;
-}
-td.reviewTitle {
-    text-align: center;
-    width: 300px;
-}
 
 
 /*
@@ -316,4 +287,33 @@ footer#footer {
     width: 80px;
     height: 15px;
     margin-right: 10px;
+}
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+tr.tHead {
+    height: 40px;
+}
+th {
+    border-bottom: 1px solid #ccc;
+}
+td {
+    height: 35px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding: 15px;
+}
+.reivewRegisterDate, .reivewUpdateDate {
+    width: 90px;
+}
+.reviewWriter {
+    width: 50px;
+}
+td.reviewTitle {
+    text-align: center;
+    width: 300px;
 }

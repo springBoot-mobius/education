@@ -19,8 +19,11 @@
             </div>
             <!-- 작성 -->
             <div class="write_area">
-                <form class="ask_form">
-                    <input class="ask_title" type="text" placeholder="제목을 입력하세요">
+                <form class="ask_form" method="post" th:action="@{/request/ask}" id="askForm" th:object="${request}">
+                    <div class="field">
+                    <input th:field="*{requestTitle}" class="ask_title" type="text" placeholder="제목을 입력하세요">
+                    </div>
+                    <div class="field">
                     <select class="ask_category" name="category">
                         <option value='' selected>-- 선택 --</option>
                         <option value="개발·프로그래밍">개발·프로그래밍</option>
@@ -28,14 +31,15 @@
                         <option value="데이터 사이언스">데이터 사이언스</option>
                         <option value="기타">기타</option>
                     </select>
-                    <div class="write_content_area">
-                        <textarea class="ask_content" cols="82" rows="22"></textarea>
+                    </div>
+                    <div class="write_content_area field">
+                        <textarea th:field="*{requestContent}" class="ask_content" cols="82" rows="22"></textarea>
                     </div>
                     <!-- 버튼 -->
-                    <div class="button_area">
+                    <div class="button_area actions">
                         <div class="buttons">
                             <button class="cancel_button">취소</button>
-                            <button class="write_button">작성</button>
+                            <button class="write_button" type="submit">작성</button>
                         </div>
                     </div>
                 </form>

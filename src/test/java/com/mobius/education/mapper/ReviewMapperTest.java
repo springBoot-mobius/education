@@ -20,4 +20,9 @@ public class ReviewMapperTest {
     public void selectMyAllReviewTest(){
         log.info("asd"+reviewMapper.selectAllMyReview(0L));
     }
+
+    @Test
+    public void selectAllTest(){
+        log.info("전체 리뷰 조회: " + reviewMapper.selectAll());
+    }
 }

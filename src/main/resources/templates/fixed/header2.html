@@ -161,7 +161,7 @@
                 <a href="">강의요청</a>
               </div>
               <div class="navbar_item">
-                <a href="review.html">수강후기</a>
+                <a class="review button">수강후기</a>
               </div>
               <div class="navbar_item">
                 <a href="">공지사항</a>
@@ -180,4 +180,11 @@
   </body>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="/js/fixed/header2.js"></script>
+  <script th:inline = "javascript">
+
+    $("a.review").on("click", function(e){
+        e.preventDefault();
+        location.href = "/review/review";
+    });
+  </script>
 </html>

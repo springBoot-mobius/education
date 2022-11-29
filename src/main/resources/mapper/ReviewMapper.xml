@@ -11,4 +11,9 @@
         WHERE USER_NUMBER = #{userNumber}
     </select>
 
+    <select id="selectAll" resultType="reviewVO">
+        SELECT REVIEW_TITLE , REVIEW_CONTENT , REVIEW_REGISTER_DATE , REVIEW_MODIFY_DATE
+        FROM TBL_REVIEW
+    </select>
+
 </mapper>
