@@ -7,12 +7,4 @@ import java.util.List;
 
 @Mapper
 public interface LectureThumbnailMapper {
-    //    파일 추가
-    public void insert(LectureThumbnailVO lectureThumbnailVO);
-
-    //    파일 삭제
-    public void delete(Long lectureNumber);
-
-    //    파일 조회
-    public LectureThumbnailVO select(Long lectureNumber);
 }

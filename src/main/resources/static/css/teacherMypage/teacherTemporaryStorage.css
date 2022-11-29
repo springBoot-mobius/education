@@ -51,6 +51,32 @@ li.section2 {
     color: #000a12;
 }
 
+/* 타이틀*/
+.mypage_title_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mypage_title {
+    display: inline-block;
+}
+
+.apply_button_area {
+    display: inline-block;
+}
+
+.apply_button {
+    color: #00ccaa;
+    font-size: 15px;
+    background-color: #e9fbf8;
+    line-height: normal;
+    letter-spacing: normal;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 11px 14px;
+    border-radius: 6px;
+}
+
 /* mypage 내용  */
 
 /* mypage tilte */

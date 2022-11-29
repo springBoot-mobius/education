@@ -119,6 +119,7 @@ div.mypage_title {
 }
 .class-list-container div {
     text-align: left;
+    overflow: hidden;
 }
 .list-class-title,
 .list-class-place {
@@ -131,6 +132,11 @@ div.mypage_title {
 .list-class-end-date {
     width: 12.5%;
 }
+
+.list-class-end-date {
+    text-align: center !important;
+}
+
 .title-part {
     color: #a1aab2;
     font-size: 15px;

@@ -19,7 +19,7 @@
         <div class="navi_container">
             <ul class="show_navi_detail">
                 <a th:href="@{/teacherMypage/mypage}"><li class="section1">MY 홈</li></a>
-                <a href="javascript:void(0);"><li class="section2">작성중인 지원서</li></a>
+                <a th:href="@{/teacherMypage/temporary}"><li class="section2">작성중인 지원서</li></a>
                 <a th:href="@{/teacherMypage/myLecture}"><li class="section3">나의 강의 현황</li></a>
                 <a th:href="@{/teacherMypage/myReview}"><li class="section4">나의 후기</li></a>
                 <a th:href="@{/teacherMypage/myInfo}"><li class="section5">개인정보 설정</li></a>
@@ -72,7 +72,7 @@
                 <div class="mypage_part1_title_container">
                     <div class="mypage_part1_title">작성중인 지원서</div>
                     <button class="show_detail_part1">
-                        <a href="javascript:void(0);">전체보기 &gt;</a>
+                        <a th:href="@{/teacherMypage/temporary}">전체보기 &gt;</a>
                     </button>
                 </div>
                 <div class="mypage_part1_detail_container">
@@ -99,6 +99,32 @@
                 <div class="mypage_part3_detail_container">
                     <div class="mypage_part3_detail">
                         <div class="no_comment_mesage">현재 나의 후기가 없어요</div>
+                        <div class="comment_mesage">
+                            <span class="comment_list_title">강의제목</span>
+                            <span class="comment_list_writer">작성자</span>
+                            <span class="comment_list_date">작성 날짜</span>
+                        </div>
+                        <a>
+                            <div class="comment_mesage">
+                                <span class="comment_title">[2022 코딩 입문] 누구나 쉽게 배우는 JAVA!</span>
+                                <span class="comment_writer">김혜원</span>
+                                <span class="comment_date">2022/11/28</span>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="comment_mesage">
+                                <span class="comment_title">[2022 코딩 입문] 누구나 쉽게 배우는 JAVA!</span>
+                                <span class="comment_writer">김혜원</span>
+                                <span class="comment_date">2022/11/28</span>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="comment_mesage">
+                                <span class="comment_title">[2022 코딩 입문] 누구나 쉽게 배우는 JAVA!</span>
+                                <span class="comment_writer">김혜원</span>
+                                <span class="comment_date">2022/11/28</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
