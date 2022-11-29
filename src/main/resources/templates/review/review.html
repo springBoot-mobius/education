@@ -7,316 +7,178 @@
     <title>Document</title>
     <link href="https://webfontworld.github.io/pretendard/Pretendard.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/review/review.css">
+    <link rel="stylesheet" href="review.css">
 </head>
 <body>
 
 <header th:replace="/fixed/header2.html" :: body></header>
-<!--    <header id="header">-->
-<!--        <div class="container">-->
-<!--            <div class="top_header">-->
-<!--                <div class="top_logo">-->
-<!--                    <span>-->
-<!--                        <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png">-->
-<!--                    </span>-->
-<!--                </div>-->
-<!--                <div class="top_content">-->
-<!--                    <span>교육</span>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--            <div class="content">-->
-<!--                <div class="brand_header">-->
-<!--                    <a href="" class="brand_logo">-->
-<!--                        <span class=""></span>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="navbar_menu">-->
-<!--                    <div class="navbar_left">-->
-<!--                        <div class="headerLogo navbar_item">-->
-<!--                            <a href="index.html">-->
-<!--                            <img src="img/logo.png" >-->
-<!--                            </a>-->
-<!--                        </div> -->
-<!--                        <div class="navbar_item">-->
-<!--                            <a href="">강의</a>-->
-<!--                        </div>-->
-<!--                        <div class="navbar_item">-->
-<!--                            <a href="">열어주세요</a>-->
-<!--                        </div>-->
-<!--                        <div class="navbar_item">-->
-<!--                            <a href="">수강후기</a>-->
-<!--                        </div>-->
-<!--                        <div class="navbar_item">-->
-<!--                            <a href="">강의장</a>-->
-<!--                        </div>-->
-<!--                        <div class="navbar_item">-->
-<!--                            <a href="">공지사항</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="navbar_right">-->
-<!--                        <div class="navbar_item mypageBtn">-->
-<!--                            <span class="mypageIcon">-->
-<!--                                <img src="img/mypage.png">-->
-<!--                            </span>-->
-<!--                            <div class="buttons">-->
-<!--                                <a href="" class="button">로그아웃</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            </div>-->
-<!--    -->
-<!--       </header>-->
-       <section id="review">
-           <div class="reviewBox">
-            <div class="titleBox">
-           <div class="reviewHeader">
-               <span class="reviewTitle">수강평</span>
-           </div>
-           <div class="reviewTxt">
-               🔥실시간으로 올라오는 진짜 수강평!🔥
-           </div>
-           </div>
-           </div>
-           <div class="review_view">
-            <div class="container">
-            <span>VIEW</span>
+<section id="review">
+    <div class="reviewBox">
+        <div class="titleBox">
+            <div class="reviewHeader">
+                <span class="reviewTitle">수강평</span>
             </div>
-           </div>
-        <div class="container">
-            <div class="reviewList">
-                <div class="listCover">
-                    <div class="review_el">
-                        <div class="review_header">
-                            <div class="header_left">
-                                <div class="reviewIcon">
-                                    <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png">
-                                </div>
-                                <div class="user_info">
-                                    <div class="class_name">
-                                        <a href="classReview.html">
-                                        [2022 코딩 입문] 누구나 쉽게 배우는 JAVA!
-                                        </a>
-                                    </div>
-                                    <div class="user_name">홍길동</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review_body">
-                            큰 도움이 되었습니다. 강의 내용, 강의 자료가 너무 만족스럽고 이해가 너무 잘됩니다!! 다음 강의도 기대할게요~~
-                        </div>
-                        <div class="review_tool">
-                            <span class="reviewDate" id="">2022-11-16</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="listCover">
-                    <div class="review_el">
-                        <div class="review_header">
-                            <div class="header_left">
-                                <div class="reviewIcon">
-                                    <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png">
-                                </div>
-                                <div class="user_info">
-                                    <div class="class_name">
-                                        <a href="">
-                                        [ABC] 원어민처럼 말하게 되는 기초 영어 🎶
-                                        </a>
-                                        <div class="review_delete">
-                                            <form id="">
-                                                <input type="button" onclick="onDisplay()" value="수정" class="review_modify">
-                                                <input  type="button" value="삭제">
-                                            </form>
-                                        </div>
-                                    </div> 
-                                    <div class="user_name">이종호</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review_body">
-                            제 동생에게 추천했는데 동생이 너무 즐거워하고 영어에 대한 즐거움이 생긴거 같아서 만족합니다~!
-                        </div>
-                        <div class="review_tool">
-                            <span class="reviewDate" id="">2022-11-16</span>
-                        </div>
-                    </div>
-                    <div class="review_modifiy" id="noneDiv" style="display: none;">
-                        <div class="review_modify_box">
-                        <div class="modify_content">
-                            <textarea placeholder="수정할 후기를 작성해주세요."></textarea>
-                            <div class="modify_button">
-                                <button type="button" class="modify_btn">등록</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="listCover">
-                    <div class="review_el">
-                        <div class="review_header">
-                            <div class="header_left">
-                                <div class="reviewIcon">
-                                    <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png">
-                                </div>
-                                <div class="user_info">
-                                    <div class="class_name">
-                                        <a href="">
-                                        [ABC] 원어민처럼 말하게 되는 기초 영어 🎶
-                                        </a>
-                                    </div>
-                                    <div class="user_name">김혜원</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review_body">
-                            너무 쉽게 알려주셔서 이해가 너무 잘되었어요! 강사님의 다음 강의도 기대됩니다.
-                        </div>
-                        <div class="review_tool">
-                            <span class="reviewDate" id="">2022-11-16</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="listCover">
-                    <div class="review_el">
-                        <div class="review_header">
-                            <div class="header_left">
-                                <div class="reviewIcon">
-                                    <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png">
-                                </div>
-                                <div class="user_info">
-                                    <div class="class_name">
-                                        <a href="">
-                                        [ABC] 원어민처럼 말하게 되는 기초 영어 🎶
-                                        </a>
-                                    </div>
-                                    <div class="user_name">이종호</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review_body">
-                            제 동생에게 추천했는데 동생이 너무 즐거워하고 영어에 대한 즐거움이 생긴거 같아서 만족합니다~!
-                        </div>
-                        <div class="review_tool">
-                            <span class="reviewDate" id="">2022-11-16</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="moreView">
-                <span>수강평 더보기</span>
+            <div class="reviewTxt">
+                🔥실시간으로 올라오는 진짜 수강평!🔥
             </div>
         </div>
-       </section>
-       <footer id="footer">
-        <div class="wrapper">
-            <div class="footerTop">
-                <div class="menuList">
-                    <div class="listTitle">
-                        강의목록
-                    </div>
-                    <div class="menuSublist">
-                        <a href="" >IT</a>
-                        <a href="" >외국어</a>
-                        <a href="" >강의추천</a>
-                    </div>
+    </div>
+    <div class="review_view">
+        <div class="container">
+            <span>VIEW</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr class="tHead">
+                    <th class="reviewNumber">번호</th>
+                    <th class="reviewTitle">제목</th>
+                    <th class="reviewContent">제목</th>
+                    <th class="reviewWriter">작성자</th>
+                    <th class="reivewRegisterDate">작성일</th>
+                    <th class="reivewUpdateDate">수정일</th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="review:${reviews}">
+                    <tr class="tBody" th:object="${review}">
+                        <!--<td class="reviewNumber" th:text="*{reviewNumber}">1</td>-->
+                        <!--<td class="reviewTitle">[ABC] 원어민처럼 말하게 되는 기초 영어 🎶<a class="read" th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}"></a></td>-->
+                        <td class="reviewTitle" th:text="*{reviewTitle}"></td>
+                        <td class="reviewContent" th:text="*{reviewContent}"></td>
+                        <!--<td class="reviewWriter" th:text="*{boardWriter}">홍길동</td>-->
+                        <td class="reivewRegisterDate" th:text="*{reviewRegisterDate}"></td>
+                        <td class="reivewUpdateDate" th:text="*{reviewModifyDate}"></td>
+                    </tr>
+<!--
+                    <tr class="tBody" th:object="${review}">
+                        &lt;!&ndash;<td class="reviewNumber" th:text="*{reviewNumber}">1</td>&ndash;&gt;
+                        &lt;!&ndash;<td class="reviewTitle">[ABC] 원어민처럼 말하게 되는 기초 영어 🎶<a class="read" th:text="*{boardTitle}" th:href="@{/board/read(boardNumber=*{boardNumber})}"></a></td>&ndash;&gt;
+                        <td class="reviewTitle" th:text="*{reviewTitle}">[ABC] 원어민처럼 말하게 되는 기초 영어 🎶</td>
+                        <td class="reviewContent" th:text="*{reviewContent}">너무 쉽고 다시 듣고 싶어요 정말 잘 들었습니다~~!!!!</td>
+                        &lt;!&ndash;<td class="reviewWriter" th:text="*{boardWriter}">홍길동</td>&ndash;&gt;
+                        <td class="reivewRegisterDate" th:text="*{reviewRegisterDate}">2022-01-02</td>
+                        <td class="reivewUpdateDate" th:text="*{reviewModifyDate}">2022-01-03</td>
+                    </tr>
+-->
+                </th:block>
+                </tbody>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="wrapper">
+        <div class="footerTop">
+            <div class="menuList">
+                <div class="listTitle">
+                    강의목록
                 </div>
-                <div class="menuList">
-                    <div class="listTitle">
-                        공지사항
-                    </div>
-                    <div class="menuSublist">
-                        <a href="" >강의장 소개</a>
-                        <a href="" >수강생 문의</a>
-                        <a href="" >수강평 모아보기</a>
-                    </div>
-                </div>
-                <div class="menuList">
-                    <div class="listTitle">
-                        1대 1 문의
-                    </div>
-                    <div class="menuSublist">
-                        <a href="" >문의하기</a>
-                        <a href="" >문의답변</a>
-                        <a href="" >자주묻는 질문</a>
-                    </div>
-                </div>
-                <div class="menuList">
-                    <div class="listTitle">
-                        고객센터
-                    </div>
-                    <div class="menuSublist">
-                        <a href="" >공지사항</a>
-                        <a href="" >자주묻는 질문</a>
-                        <a href="" >저작권 신고센터</a>
-                        <a href="" >수료증 확인</a>
-                        <a href="" >강의 · 기능요청</a>
-                    </div>
-                </div>
-                <div class="menuList">
-                    <div class="listTitle">
-                        강의장
-                    </div>
-                    <div class="menuSublist">
-                        <a href="" >강의장 둘러보기</a>
-                        <a href="" >강의장 문의</a>
-                    </div>
+                <div class="menuSublist">
+                    <a href="" >IT</a>
+                    <a href="" >외국어</a>
+                    <a href="" >강의추천</a>
                 </div>
             </div>
-            <div class="footer_bottom">
-                <div class="footer_bottom_left">
-                    <div class="footer_info_top">
+            <div class="menuList">
+                <div class="listTitle">
+                    공지사항
+                </div>
+                <div class="menuSublist">
+                    <a href="" >강의장 소개</a>
+                    <a href="" >수강생 문의</a>
+                    <a href="" >수강평 모아보기</a>
+                </div>
+            </div>
+            <div class="menuList">
+                <div class="listTitle">
+                    1대 1 문의
+                </div>
+                <div class="menuSublist">
+                    <a href="" >문의하기</a>
+                    <a href="" >문의답변</a>
+                    <a href="" >자주묻는 질문</a>
+                </div>
+            </div>
+            <div class="menuList">
+                <div class="listTitle">
+                    고객센터
+                </div>
+                <div class="menuSublist">
+                    <a href="" >공지사항</a>
+                    <a href="" >자주묻는 질문</a>
+                    <a href="" >저작권 신고센터</a>
+                    <a href="" >수료증 확인</a>
+                    <a href="" >강의 · 기능요청</a>
+                </div>
+            </div>
+            <div class="menuList">
+                <div class="listTitle">
+                    강의장
+                </div>
+                <div class="menuSublist">
+                    <a href="" >강의장 둘러보기</a>
+                    <a href="" >강의장 문의</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_left">
+                <div class="footer_info_top">
                         <span class="footerLogo">
                             <a href="">
                                 <img src="img/logo.png">
                             </a>
                         </span>
-                        <span>
+                    <span>
                             |
                             <a href="" style="color: #bdbdbd; margin-left: 10px; margin-right: 10px;">개인정보취급방침</a>
                         </span>
-                        <span>
+                    <span>
                             |
                             <a href="" style="color: #bdbdbd; margin-left: 10px;">이용약관</a>
                         </span>
-                    </div>
-                    <div class="footer_info_bottom">
-                        <div class="info_dropdown">
-                            <span> (주)인프랩 | </span> 
-                            <span> 대표자: 이형주 | </span> 
-                            <span> 사업자번호: 499-81-00612 </span> 
-                            <br>
-                            <span>통신판매업: 2018-성남분당B-0062 | </span>
-                            <span>개인정보보호책임자: 이동욱 |  </span>
-                            <span>이메일: info@inflearn.com  </span>
-                            <br>
-                            <span>주소: 경기도 성남시 분당구 대왕판교로 660 유스페이스 1A동 405호</span>
-                        </div>
-                            ©INFLAB. ALL RIGHTS RESERVED
-                    </div>
                 </div>
-                <div class="footer_bottom_right">
-                    <a href="">
-                        <img src="https://www.shouse.garden/images/common/u_in_m.png">
-                    </a>
-                    <a href="">
-                        <img src="https://www.shouse.garden/images/common/u_fb_m.png">
-                    </a>
-                    <a href="">
-                        <img src="https://www.shouse.garden/images/common/u_kc_m.png">
-                    </a>
-                    <a href="">
-                        <img src="https://www.shouse.garden/images/common/u_ap_m.png">
-                    </a>
-                    <a href="">
-                        <img src="https://www.shouse.garden/images/common/u_yt_m.png">
-                    </a>
+                <div class="footer_info_bottom">
+                    <div class="info_dropdown">
+                        <span> (주)인프랩 | </span>
+                        <span> 대표자: 이형주 | </span>
+                        <span> 사업자번호: 499-81-00612 </span>
+                        <br>
+                        <span>통신판매업: 2018-성남분당B-0062 | </span>
+                        <span>개인정보보호책임자: 이동욱 |  </span>
+                        <span>이메일: info@inflearn.com  </span>
+                        <br>
+                        <span>주소: 경기도 성남시 분당구 대왕판교로 660 유스페이스 1A동 405호</span>
+                    </div>
+                    ©INFLAB. ALL RIGHTS RESERVED
                 </div>
             </div>
+            <div class="footer_bottom_right">
+                <a href="">
+                    <img src="https://www.shouse.garden/images/common/u_in_m.png">
+                </a>
+                <a href="">
+                    <img src="https://www.shouse.garden/images/common/u_fb_m.png">
+                </a>
+                <a href="">
+                    <img src="https://www.shouse.garden/images/common/u_kc_m.png">
+                </a>
+                <a href="">
+                    <img src="https://www.shouse.garden/images/common/u_ap_m.png">
+                </a>
+                <a href="">
+                    <img src="https://www.shouse.garden/images/common/u_yt_m.png">
+                </a>
+            </div>
         </div>
-       </footer>
-       <script src="/js/review/review.js"></script>
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </div>
+</footer>
+<script src="/js/review/review.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:inline="javascript">
+
+</script>
 </body>
 </html>

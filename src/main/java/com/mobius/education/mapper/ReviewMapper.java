@@ -14,5 +14,7 @@ public interface ReviewMapper {
 //    내가 작성한 리뷰 전체
     public List<ReviewVO> selectAllMyReview(Long userNumber);
 
+//    전체조회
+    List<ReviewVO> selectAll();
 
 }

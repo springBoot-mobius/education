@@ -24,3 +24,11 @@ $(document).ready(function () {
     $("#" + tab_id).addClass("current");
   });
 });
+
+
+// review
+console.info("연결");
+$("a.review").on("click", function(e){
+  e.preventDefault();
+  location.href = "/review/review";
+});
