@@ -13,12 +13,12 @@ public class TestController {
 
     @GetMapping("/ex01")
     public String ex01(){
-        return "/place/placeInformation";
+        return "/fixed/header2";
     }
 
     @GetMapping("/ex02")
     public String ex02(){
-        return "/teacherMypage/teacherTemporaryStorage";
+        return "/userMypage/mypage";
     }
 
 }

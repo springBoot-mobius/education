@@ -8,7 +8,9 @@
   </head>
   <body>
   <header th:replace="/fixed/header2.html" :: body></header>
+
     <div class="App">
+
       <div class="wrap">
         <aside class="left-menu">
           <nav class="nav">
@@ -51,7 +53,7 @@
             <ul class="ul-three">
               <li class="">
                 <a href="">
-                  <span class="inquiry">문의 내역</span>
+                  <span class="inquiry">나의 요청 내역</span>
                 </a>
               </li>
               <li class="">
@@ -62,6 +64,7 @@
             </ul>
           </nav>
         </aside>
+        
         <div class="main-content">
           <div class="dashboard">
             <!--    1번째   -->
@@ -101,11 +104,11 @@
                 </div>
                 <div class="lecture-number">
                   <div class="text-ro">
-                    <p class="text-root">1</p>
+                    <p class="text-root" id="lectureOnGoingCount" th:name="lectureOnGoingCount">1</p>
                     <p class="text-roots">수강중</p>
                   </div>
                   <div class="text-ro">
-                    <p class="text-root">0</p>
+                    <p class="text-root" id="lectureEndCount" th:name="lectureEndCount">0</p>
                     <p class="text-roots">수강완료</p>
                   </div>
                   <!--<div class="study-go">
@@ -139,8 +142,8 @@
               <div class="content-text">
                 <div class="text-one">
                   <div class="text-first">
-                    <span class="">🚩</span>
-                    <p class="bow-left">수강중인 강의</p>
+                    <span class="">📝</span>
+                    <p class="bow-left">내가 작성한 요청</p>
                   </div>
                   <div class="text-second">
                     <a href="">

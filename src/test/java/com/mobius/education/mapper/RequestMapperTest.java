@@ -1,8 +1,12 @@
 package com.mobius.education.mapper;
 
+<<<<<<< HEAD
+import lombok.extern.slf4j.Slf4j;
+=======
 import com.mobius.education.domain.vo.RequestVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.Request;
+>>>>>>> 6b61d1280a708f5a3efcdc823b09ad05b3b0ab2e
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +17,20 @@ public class RequestMapperTest {
     @Autowired
     private RequestMapper requestMapper;
 
+<<<<<<< HEAD
+    @Test
+    public void selectUserRequestCountTest(){
+        log.info("내가 작성한 요청수 : " + requestMapper.selectUserRequestCount(0L));
+
+    }
+
+    @Test
+    public void selectUserRequestAllTest(){
+        log.info("내가 작성한 요청 수 모두" + requestMapper.selectUserRequestAll(0L));
+    }
+
+
+=======
 //    추가
     @Test
     public void insertTest(){
@@ -42,4 +60,5 @@ public class RequestMapperTest {
         requestMapper.selectAll().stream().map(RequestVO::getRequestTitle).forEach(log::info);
     }
 
+>>>>>>> 6b61d1280a708f5a3efcdc823b09ad05b3b0ab2e
 }
