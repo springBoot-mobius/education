@@ -16,10 +16,10 @@
                 <img class="bannerImg" src="https://cdn.inflearn.com/public/courses/326674/cover/4657d793-56a4-42f3-9d44-dc88d125a49e">
             </div>
             <div class="explanation" th:object="${lectures}">
-                <div class="programing" th:field="*{lectureCategory}"></div>
-                <div class="program_detail" th:field="*{lectureTitle}"></div>
-                <div class="program_detail2" th:field="*{lectureNumber}"></div>
-                <div class="program_name" th:field="*{lectureDate}">김영한</div>
+                <div class="programing" th:text="*{lectureCategory}"></div>
+                <div class="program_detail" th:text="*{lectureTitle}"></div>
+                <div class="program_detail2" th:text="*{lectureNumber}"></div>
+                <div class="program_name" th:text="*{lectureDate}">김영한</div>
             </div>
         </div>
         <div class="menu">
@@ -36,13 +36,7 @@
             <div class="container">
                 <div class="content_main">
                     <section class="description">
-                        
-                        <p class="banner_explanation">
-                            <strong>원리를 알아야 핵심이 보인다!</strong>
-                            <br>
-                            <strong>김영한의 스프링 MVC기본편</strong>
-                            👨‍💻
-                        </p>
+                        <p class="banner_explanation" th:text="*{lectureDetail}"></p>
                     </section>
                 </div>
             </div>
@@ -73,12 +67,7 @@
 <script src="/js/basic/util.js"></script>
 <script src="/js/basic/main.js"></script>
 <script th:inline="javascript">
-    let $pages = $("a.changePage");
-
-    $pages.on("click", function(e){
-        e.preventDefault();
-        $(document.pageForm.page).val($(this).attr("href"));
-        document.pageForm.submit();
-    });
+    let lectureNumber = [[${lecture.lectureNumber}]];
+    let queryString = [[${criteria.queryString}]];
 </script>
 </html>
