@@ -46,5 +46,20 @@ class LectureDAOTest {
         lectureDAO.findExpectedAll(new Criteria().create(2, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
     }
 
+    @Test
+    public void selectAllTest() {
+        lectureDAO.findAll(new Criteria().create(2, 20)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void countTotalTest() {
+        log.info("count: " + lectureDAO.countTotal());
+    }
+
+    @Test
+    public void findByIdTest() {
+        log.info("findById: " + lectureDAO.findById(50L));
+    }
+
 
 }

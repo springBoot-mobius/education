@@ -39,10 +39,6 @@ class LectureServiceTest {
 //
 //    }
 
-    @Test
-    public void showTest() {
-        lectureService.show(7L);
-    }
 
     @Test
     public void modifyTest() {
@@ -50,7 +46,7 @@ class LectureServiceTest {
     }
 
     @Test
-    public void showAllTest(){
+    public void showLectureAllTest(){
         lectureService.showFinishedAll(new Criteria().create(2, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
     }
 
@@ -63,4 +59,16 @@ class LectureServiceTest {
     public void showExpectedAllTest(){
         lectureService.showExpectedAll(new Criteria().create(2, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
     }
+
+    @Test
+    public void showAllTest() {
+        lectureService.showAll(new Criteria().create(2, 20)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+
+    }
+
+    @Test
+    public void showTest() {
+        log.info("show: " + lectureService.show(50L));
+    }
+
 }

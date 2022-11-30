@@ -42,7 +42,17 @@ public class LectureService {
 
 //    강의 조회
     public LectureDTO show(Long lectureNumber) {
-        return new LectureDTO();
+        return lectureDAO.findById(lectureNumber);
+    }
+
+//    강의 전체 조회
+    public List<LectureVO> showAll(Criteria criteria) {
+        return lectureDAO.findAll(criteria);
+    }
+
+//  강의 전체 개수
+    public int countAll() {
+        return lectureDAO.countTotal();
     }
 
 //    완료 강의 리스트 출력

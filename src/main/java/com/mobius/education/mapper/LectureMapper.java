@@ -21,7 +21,13 @@ public interface LectureMapper {
     public void update(LectureDTO lectureDTO);
 
     //강의 조회
-    public LectureVO select(Long lectureNumber);
+    public LectureDTO select(Long lectureNumber);
+
+    //모든 강의 조회
+    public List<LectureVO> selectAll(Criteria criteria);
+
+    //모든 강의 개수
+    public int getTotal();
 
     //진행 완료 강의 리스트
     public List<LectureVO> lectureSelectAll(Criteria criteria);

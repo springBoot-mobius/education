@@ -49,5 +49,21 @@ class LectureMapperTest {
         lectureMapper.expectedSelectAll(new Criteria().create(3, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
     }
 
+    @Test
+    public void selectAllTest() {
+        lectureMapper.selectAll(new Criteria().create(3, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void getTotalTest() {
+        log.info("count: " + lectureMapper.getTotal());
+    }
+
+    @Test
+    public void selectTest() {
+        log.info("select: " + lectureMapper.select(50L));
+    }
+
+
 
 }
