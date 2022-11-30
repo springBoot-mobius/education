@@ -47,5 +47,36 @@ class LectureMapperTest {
         lectureMapper.delete(Long.parseLong("21"));
     }
 
+    @Test
+    public void lectureSelectAllTest(){
+        lectureMapper.lectureSelectAll(new Criteria().create(2, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void ongoingSelectAllTest(){
+        lectureMapper.ongoingSelectAll(new Criteria().create(1, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void expectedSelectAllTest(){
+        lectureMapper.expectedSelectAll(new Criteria().create(3, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void selectAllTest() {
+        lectureMapper.selectAll(new Criteria().create(3, 10)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void getTotalTest() {
+        log.info("count: " + lectureMapper.getTotal());
+    }
+
+    @Test
+    public void selectTest() {
+        log.info("select: " + lectureMapper.select(50L));
+    }
+
+
 
 }

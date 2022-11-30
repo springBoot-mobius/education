@@ -42,4 +42,21 @@ class LectureDAOTest {
         lectureDAO.remove(Long.parseLong("25"));
     }
 
+    @Test
+    public void selectAllTest() {
+        lectureDAO.findAll(new Criteria().create(2, 20)).stream().map(LectureVO::getLectureTitle).forEach(log::info);
+    }
+
+    @Test
+    public void countTotalTest() {
+        log.info("count: " + lectureDAO.countTotal());
+    }
+
+    @Test
+    public void findByIdTest() {
+        log.info("findById: " + lectureDAO.findById(50L));
+    }
+
+
+
 }

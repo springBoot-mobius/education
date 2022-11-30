@@ -42,7 +42,48 @@ public class LectureDAO {
     }
 
     //강의 조회
-    public LectureVO findById(Long lectureNumber) {
+    public LectureDTO findById(Long lectureNumber) {
         return lectureMapper.select(lectureNumber);
     }
+
+    //강의 전체 조회
+    public List<LectureVO> findAll(Criteria criteria) {
+        return lectureMapper.selectAll(criteria);
+    }
+
+    //강의 전체 개수
+    public int countTotal() {
+        return lectureMapper.getTotal();
+    }
+
+    // 진행 완료 강의 전체 조회
+    public List<LectureVO> findFinishedAll(Criteria criteria){
+        return lectureMapper.lectureSelectAll(criteria);
+    }
+
+    //  진행 완료 전체 개수
+    public int findFinishedCountAll(){
+        return lectureMapper.lectureGetTotal();
+    }
+
+    // 진행 완료 강의 전체 조회
+    public List<LectureVO> findOngoingAll(Criteria criteria){
+        return lectureMapper.ongoingSelectAll(criteria);
+    }
+
+    //  진행 완료 전체 개수
+    public int findOngoingCountAll(){
+        return lectureMapper.ongoingGetTotal();
+    }
+
+    // 진행 예정 강의 전체 조회
+    public List<LectureVO> findExpectedAll(Criteria criteria){
+        return lectureMapper.expectedSelectAll(criteria);
+    }
+
+    //  진행 예정 전체 개수
+    public int findExpectedCountAll(){
+        return lectureMapper.expectedGetTotal();
+    }
+
 }
