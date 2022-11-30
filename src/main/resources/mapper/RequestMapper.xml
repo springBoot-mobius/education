@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mobius.education.mapper.RequestMapper">
-<<<<<<< HEAD
     <select id="selectUserRequestCount" resultType="int">
         SELECT COUNT(USER_NUMBER) FROM TBL_REQUEST
         WHERE USER_NUMBER = #{userNumber}
@@ -11,12 +10,10 @@
         SELECT REQUEST_TITLE , REQUEST_CATEGORY , REQUEST_CONTENT , REQUEST_REGISTER_DATE , USER_NUMBER FROM TBL_REQUEST
         WHERE USER_NUMBER = #{userNumber}
     </select>
-=======
     <insert id="insert">
         INSERT INTO TBL_REQUEST(REQUEST_NUMBER, REQUEST_TITLE, REQUEST_CATEGORY,REQUEST_CONTENT)
         VALUES (SEQ_BOARD.NEXTVAL, #{requestTitle}, #{requestCategory}, #{requestContent})
     </insert>
->>>>>>> 6b61d1280a708f5a3efcdc823b09ad05b3b0ab2e
 
     <update id="update">
         SET REQUEST_TITLE = #{requestTitle}, REQUEST_CONTENT = #{requestContent}, REQUEST_MODIFY_DATE = SYSDATE

@@ -14,7 +14,7 @@
       <div class="join_wrapper">
         <!-- 사용자 회원 가입 -->
         <div class="user_join_container tab-content current" id="user_join_container">
-          <form action="" class="join_form">
+          <form method="post" th:action="@{/join/userJoin}" th:object="${user}" class="join_form">
             <div class="titles">
               <div class="join_title">
                 <h2>사용자 회원가입</h2>
@@ -69,7 +69,7 @@
               <span class="nickNamResult"></span>
             </div>
             <div class="button_container">
-              <input type="button" value="가입하기" />
+              <input type="submit" value="가입하기" />
             </div>
 
             <!-- 이용약관 -->

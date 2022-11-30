@@ -8,13 +8,11 @@ import java.util.List;
 @Mapper
 public interface RequestMapper {
 
-<<<<<<< HEAD
     // 사용자가 작성한 요청 수 조회
     public int selectUserRequestCount(Long userNumber);
 
     // 사용자가 작성한 요청 모두 조회
     public List<RequestVO> selectUserRequestAll(Long userNumber);
-=======
 //    요청추가
     public void insert(RequestVO requestVO);
 
@@ -29,6 +27,5 @@ public interface RequestMapper {
 
 //    전체조회
     public List<RequestVO> selectAll();
->>>>>>> 6b61d1280a708f5a3efcdc823b09ad05b3b0ab2e
 
 }
