@@ -1,19 +1,30 @@
 package com.mobius.education.repository;
 
-import com.mobius.education.domain.criteria.Criteria;
 import com.mobius.education.domain.vo.LectureDTO;
-import com.mobius.education.domain.vo.LectureFileVO;
 import com.mobius.education.domain.vo.LectureVO;
 import com.mobius.education.mapper.LectureMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 @RequiredArgsConstructor
 public class LectureDAO {
     private final LectureMapper lectureMapper;
+
+    //진행 예정 강의 개수
+    public int findExpected() {
+        return lectureMapper.selectExpected();
+    }
+
+    //진행 완료 강의 개수
+    public int findFinished() {
+        return lectureMapper.selectFinished();
+    }
+
+    //진행중 강의 개수
+    public int findOngoing() {
+        return lectureMapper.selectOngoing();
+    }
 
     //강의 신청
     public void save(LectureDTO lectureDTO){
@@ -74,4 +85,5 @@ public class LectureDAO {
     public int findExpectedCountAll(){
         return lectureMapper.expectedGetTotal();
     }
+
 }

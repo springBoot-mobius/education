@@ -21,13 +21,13 @@ body {
     width: 16.6667%;
     padding-right: 10px;
 }
-ul {
+ul.ul-two {
     list-style: none;
     margin: 0;
-    padding: 0;
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
+    padding-bottom: 20px;
 }
 li {
     margin-bottom: 15px;
@@ -63,6 +63,8 @@ li > span {
 .lecture-management {
     font-size: 12px;
     color: gray;
+    padding-bottom: 10px;
+
 }
 .profile {
     margin-left: 15px;
@@ -177,6 +179,8 @@ a {
 .text-root {
     font-size: 35px;
     margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .text-roots {
     color: rgb(173, 181, 189);

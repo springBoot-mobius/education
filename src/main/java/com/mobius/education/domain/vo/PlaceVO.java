@@ -8,9 +8,4 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class PlaceVO {
-    private Long placeNumber;
-    private String placeName;
-    private String placeAddress;
-    private Long placeMaximumNumber;
-    private String placeStatus;
 }

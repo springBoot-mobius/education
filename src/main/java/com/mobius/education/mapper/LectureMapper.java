@@ -1,15 +1,20 @@
 package com.mobius.education.mapper;
 
-import com.mobius.education.domain.criteria.Criteria;
 import com.mobius.education.domain.vo.LectureDTO;
-import com.mobius.education.domain.vo.LectureFileVO;
 import com.mobius.education.domain.vo.LectureVO;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
 @Mapper
 public interface LectureMapper {
+
+    //진행 예정 강의 개수
+    public int selectExpected();
+
+    //진행 완료 강의 개수
+    public int selectFinished();
+
+    //진행중 강의 개수
+    public int selectOngoing();
 
     //강의 신청
     public void insert(LectureDTO lectureDTO);
@@ -28,23 +33,5 @@ public interface LectureMapper {
 
     //모든 강의 개수
     public int getTotal();
-
-    //진행 완료 강의 리스트
-    public List<LectureVO> lectureSelectAll(Criteria criteria);
-
-    //진행 완료 강의 개수
-    public int lectureGetTotal();
-
-    //진행 중 강의 리스트
-    public List<LectureVO> ongoingSelectAll(Criteria criteria);
-
-    //진행 완료 강의 개수
-    public int ongoingGetTotal();
-
-    //진행 중 강의 리스트
-    public List<LectureVO> expectedSelectAll(Criteria criteria);
-
-    //진행 완료 강의 개수
-    public int expectedGetTotal();
 
 }

@@ -11,4 +11,10 @@ public class ApplyLectureVO {
     private Long applyLectureNumber;
     private Long userNumber;
     private Long lectureNumber;
+
+    public void create(Long applyLectureNumber, Long userNumber, Long lectureNumber) {
+        this.applyLectureNumber = applyLectureNumber;
+        this.userNumber = userNumber;
+        this.lectureNumber = lectureNumber;
+    }
 }
