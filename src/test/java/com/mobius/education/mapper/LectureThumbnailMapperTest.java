@@ -2,6 +2,7 @@ package com.mobius.education.mapper;
 
 import com.mobius.education.domain.vo.LectureDTO;
 import com.mobius.education.domain.vo.LectureFileVO;
+import com.mobius.education.domain.vo.LectureThumbnailVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,19 +14,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j
-class LectureFileMapperTest {
+class LectureThumbnailMapperTest {
 
     @Autowired
-    private LectureFileMapper lectureFileMapper;
+    private LectureThumbnailMapper lectureThumbnailMapper;
 
     @Test
     public void insertTest() {
         LectureDTO lectureDTO = new LectureDTO();
         lectureDTO.setLectureNumber(Long.parseLong("23"));
-        LectureFileVO lectureFileVO = new LectureFileVO();
-        lectureFileVO.create("테스트1", "2022/11/16", UUID.randomUUID().toString(), lectureDTO.getLectureNumber());
-        lectureFileMapper.insert(lectureFileVO);
-        log.info("name: " + lectureFileVO.getLectureFileName());
+        LectureThumbnailVO lectureThumbnailVO = new LectureThumbnailVO();
+        lectureThumbnailVO.create("테스트1", "2022/11/16", UUID.randomUUID().toString(), lectureDTO.getLectureNumber());
+        lectureThumbnailMapper.insert(lectureThumbnailVO);
+        log.info("name: " + lectureThumbnailVO.getLectureThumbnailName());
     }
-
 }

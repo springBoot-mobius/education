@@ -1,77 +1,95 @@
 package com.mobius.education.service;
 
-import com.mobius.education.domain.criteria.Criteria;
-import com.mobius.education.domain.vo.*;
-import com.mobius.education.repository.*;
+import com.mobius.education.domain.vo.LectureDTO;
+import com.mobius.education.domain.vo.LectureFileVO;
+import com.mobius.education.domain.vo.LectureThumbnailVO;
+import com.mobius.education.domain.vo.LectureVO;
+import com.mobius.education.repository.LectureDAO;
+import com.mobius.education.repository.LectureFileDAO;
+import com.mobius.education.repository.LectureThumbnailDAO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class LectureService {
     private final LectureDAO lectureDAO;
-    private final ReservePlaceDAO reservePlaceDAO;
-    private final PlaceDAO placeDAO;
     private final LectureFileDAO lectureFileDAO;
     private final LectureThumbnailDAO lectureThumbnailDAO;
 
-    // 강의 신청
-    @Transactional(rollbackFor = Exception.class)
-    public void apply(LectureDTO lectureDTO, ReservePlaceVO reservePlaceVO) {
-        lectureDAO.save(lectureDTO);
-        reservePlaceDAO.save(reservePlaceVO);
-        List<LectureFileVO> files = lectureDTO.getFiles();
-//        Optional : 검증
-        Optional.ofNullable(files).ifPresent(fileList -> {
-            fileList.forEach(file -> {
-                file.setLectureNumber(lectureDTO.getLectureNumber());
-                lectureFileDAO.save(file);
-            });
-        });
+    // 진행 예정 강의 개수
+    public int countExpected() {
+        return lectureDAO.findExpected();
     }
 
+    // 진행 예정 강의 개수
+    public int countFinished() {
+        return lectureDAO.findFinished();
+    }
 
-// 강의장 불러오기
-    public List<PlaceVO> showPlace(PlaceVO placeVO) {
-        return placeDAO.find(placeVO);
+    // 진행중 강의 개수
+    public int countOngoing() {
+        return lectureDAO.findOngoing();
+    }
+
+    // 강의 신청
+    @Transactional(rollbackFor = Exception.class)
+    public void apply(LectureDTO lectureDTO) {
+        lectureDAO.save(lectureDTO);
+        LectureFileVO file = lectureDTO.getLectureFileVO();
+        LectureThumbnailVO thumb = lectureDTO.getLectureThumbnailVO();
+
+        if(file != null) {
+            file.setLectureNumber(lectureDTO.getLectureNumber());
+            lectureFileDAO.save(file);
+        }
+
+        if(thumb != null) {
+            thumb.setLectureNumber(lectureDTO.getLectureNumber());
+            lectureThumbnailDAO.save(thumb);
+        }
+    }
+
+//    강의 삭제
+    @Transactional(rollbackFor = Exception.class)
+    public void remove(Long lectureNumber) {
+        lectureFileDAO.remove(lectureNumber);
+        lectureThumbnailDAO.remove(lectureNumber);
+        lectureDAO.remove(lectureNumber);
+
+    }
+
+//    강의 수정
+    @Transactional(rollbackFor = Exception.class)
+    public void modify(LectureDTO lectureDTO) {
+        lectureDAO.modify(lectureDTO);
+        lectureFileDAO.remove(lectureDTO.getLectureNumber());
+        lectureThumbnailDAO.remove(lectureDTO.getLectureNumber());
+
+        LectureFileVO file = lectureDTO.getLectureFileVO();
+        LectureThumbnailVO thumb = lectureDTO.getLectureThumbnailVO();
+
+        if(file != null) {
+            file.setLectureNumber(lectureDTO.getLectureNumber());
+            lectureFileDAO.save(file);
+        }
+
+        if(thumb != null) {
+            thumb.setLectureNumber(lectureDTO.getLectureNumber());
+            lectureThumbnailDAO.save(thumb);
+        }
     }
 
 //    강의 조회
     public LectureDTO show(Long lectureNumber) {
-        return new LectureDTO();
-    }
+        LectureDTO lectureDTO = new LectureDTO();
+        lectureDTO.create(lectureDAO.findById(lectureNumber));
+        lectureDTO.setLectureFileVO(lectureFileDAO.find(lectureNumber));
+        lectureDTO.setLectureThumbnailVO(lectureThumbnailDAO.find(lectureNumber));
+        return lectureDTO;
 
-//    완료 강의 리스트 출력
-    public List<LectureVO> showFinishedAll(Criteria criteria) {
-        return lectureDAO.findFinishedAll(criteria);
-    }
-
-//    완료 강의 개수
-    public int finishedGetTotal() {
-        return lectureDAO.findFinishedCountAll();
-    }
-
-//    진행 중인 강의 리스트 출력
-    public List<LectureVO> showOngoingAll(Criteria criteria) {
-        return lectureDAO.findOngoingAll(criteria);
-    }
-
-//    진행 중인 강의 개수
-    public int ongoingGetTotal() {
-        return lectureDAO.findOngoingCountAll();
-    }
-
-//    예정 강의 리스트 출력
-    public List<LectureVO> showExpectedAll(Criteria criteria) {
-        return lectureDAO.findExpectedAll(criteria);
-    }
-
-//    예정 강의 개수
-    public int expectedGetTotal() {
-        return lectureDAO.findExpectedCountAll();
     }
 }

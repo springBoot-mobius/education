@@ -2,8 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mobius.education.mapper.LectureFileMapper">
     <insert id="insert">
-        INSERT INTO TBL_LECTURE_FILE (LECTURE_FILE_NUMBER, LECTURE_FILE_NAME, LECTURE_FILE_UPLOAD_PATH, LECTURE_FILE_UUID, LECTURE_FILE_SIZE, LECTURE_FILE_CHECK, LECTURE_NUMBER)
-        VALUES (SEQ_LECTURE_FILE.NEXTVAL, #{lectureFileName}, #{lectureFileUploadPath}, #{lectureFileUuid}, #{lectureFileSize}, #{lectureFileCheck}, #{lectureNumber})
+        INSERT INTO TBL_LECTURE_FILE(LECTURE_FILE_NUMBER, LECTURE_FILE_NAME, LECTURE_FILE_UPLOAD_PATH, LECTURE_FILE_UUID, LECTURE_FILE_SIZE, LECTURE_NUMBER)
+        VALUES(SEQ_LECTURE_FILE.NEXTVAL, #{lectureFileName}, #{lectureFileUploadPath}, #{lectureFileUuid}, #{lectureFileSize}, #{lectureNumber})
     </insert>
+
+    <delete id="delete">
+        DELETE FROM TBL_LECTURE_FILE
+        WHERE LECTURE_NUMBER = #{lectureNumber}
+    </delete>
+
+    <select id="select" resultType="lectureFileVO">
+        SELECT LECTURE_FILE_NUMBER, LECTURE_FILE_NAME, LECTURE_FILE_UPLOAD_PATH, LECTURE_FILE_UUID, LECTURE_FILE_SIZE, LECTURE_NUMBER
+        FROM TBL_LECTURE_FILE
+        WHERE LECTURE_NUMBER = #{lectureNumber}
+    </select>
 
 </mapper>

@@ -7,26 +7,6 @@
     <link rel="stylesheet" href="/css/fixed/header2.css" />
     <link rel="stylesheet" href="/css/fixed/footer.css" />
     <link rel="stylesheet" href="/css/teacherMypage/applyLecture.css" />
-    <style>
-        .uploadResult ul {
-            display: flex;
-            list-style: none;
-        }
-
-        .uploadResult ul li {
-            position: relative;
-        }
-
-        .uploadResult ul li span {
-            display: block;
-            position: absolute;
-            right: 10px;
-            top: -25px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-    </style>
 </head>
 <body>
 <header th:replace="/fixed/header2.html :: body"></header>
@@ -90,7 +70,7 @@
                             <textarea th:field="*{lectureContent}" cols="100" rows="10"> </textarea>
                         </div>
 
-                        <!-- 강의 썸네일 img 파일 등록 -->
+                        <!-- 강의 상세 내용 img 파일 등록 -->
                         <div class="lecture-detail-img-input-container">
                             <div class="input-title">강의 썸네일</div>
                             <input type="file" id="thumbnail-img-file" name="thumb" />
@@ -100,10 +80,10 @@
 <!--                            </label>-->
                         </div>
 
-                        <!-- 강의 상세 img 파일 등록 -->
+                        <!-- 강의 썸네일 img 파일 등록 -->
                         <div class="lecture-thumbnail-img-input-container">
                             <div class="input-title">강의 상세 내용</div>
-                            <input type="file" id="detail-img-file" name="upload" multiple/>
+                            <input type="file" id="detail-img-file" name="upload" />
 <!--                            <input type="file" id="thumbnail-img-file" />-->
 <!--                            <label for="thumbnail-img-file">-->
 <!--                                <div class="file-upload">파일 업로드 하기</div>-->
@@ -134,16 +114,13 @@
                         <!-- 강의 장소 선택 -->
                         <div class="lecture-place-input-container">
                             <div class="input-title">강의 장소</div>
-                            <select th:field="*{lecturePlace}" class="lecture-place-list" name="lecture-place-list">
-<!--                                <th:block th:each="place:${places}" th:object="${place}">-->
-<!--                                        <option th:value="*{placeName}" th:text="*{placeName}"></option>-->
-<!--                                </th:block>-->
-                                <option value="뫼비우스문화센터 5F A강연장">뫼비우스문화센터 5F A강연장</option>
-                                <option value="뫼비우스문화센터 5F B강연장">뫼비우스문화센터 5F B강연장</option>
-                                <option value="뫼비우스문화센터 5F C강연장">뫼비우스문화센터 5F C강연장</option>
-                                <option value="뫼비우스문화센터 5F D강연장">뫼비우스문화센터 5F D강연장</option>
-                                <option value="뫼비우스문화센터 5F E강연장">뫼비우스문화센터 5F E강연장</option>
-                                <option value="뫼비우스문화센터 5F F강연장">뫼비우스문화센터 5F F강연장</option>
+                            <select name="lecture-place-list">
+                                <option value="room-a">A 강의장</option>
+                                <option value="room-b">B 강의장</option>
+                                <option value="room-c">C 강의장</option>
+                                <option value="room-d">D 강의장</option>
+                                <option value="room-e">E 강의장</option>
+                                <option value="room-f">F 강의장</option>
                             </select>
                         </div>
 
@@ -151,9 +128,9 @@
                         <div class="lecture-time-input-container">
                             <div class="input-title">강의 시간</div>
                             <select th:field="*{lectureTime}" name="lecture-time-list">
-                                <option value="Time A (9:00~12:00)">Time A (9:00~12:00)</option>
+                                <option value="Time A (09:00~12:00)">Time A (09:00~12:00)</option>
                                 <option value="Time B (13:00~17:00)">Time B (13:00~17:00)</option>
-                                <option value="Time C (19:00~22:00)">Time C (19:00~22:00)</option>
+                                <option value="Time c (19:00~22:00)">Time c (19:00~22:00)</option>
                             </select>
                         </div>
                     </div>
@@ -177,10 +154,26 @@
 <script src="/js/basic/breakpoints.min.js"></script>
 <script src="/js/basic/util.js"></script>
 <script src="/js/basic/main.js"></script>
-<script th:inline="javascript">
-    $("input.temporary-storage-btn").on("click", function(e){
-        e.preventDefault();
-        location.href = "/teacherMypage/temporary";
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $("input[type='file']").on('change', function(){
+        let formData = new FormData();
+        let files = this.files;
+
+        $(files).each(function(i, file){
+           formData.append("upload", file);
+        });
+
+        $.ajax({
+            url: "/lectureFile/upload",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function () {
+                console.log("업로드 성공");
+            }
+        });
     });
 </script>
 </html>
