@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
+@NoArgsConstructor
 public class LectureVO {
 
     private Long lectureNumber;
@@ -16,7 +17,6 @@ public class LectureVO {
     private Long lectureApplyNumber;
     private Long lectureMaximumNumber;
     private String lectureTime;
-    private String lecturePlace;
     private String lectureStatus;
     private Long teacherNumber;
     private Long placeNumber;

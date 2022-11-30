@@ -11,7 +11,6 @@ public class LectureThumbnailVO {
     private String lectureThumbnailUploadPath;
     private String lectureThumbnailUuid;
     private Long lectureThumbnailSize;
-    private boolean lectureThumbnailCheck;
     private Long lectureNumber;
 
     public void create(String lectureThumbnailName, String lectureThumbnailUploadPath, String lectureThumbnailUuid, Long lectureNumber) {
